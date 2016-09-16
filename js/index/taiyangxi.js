@@ -26,7 +26,7 @@
         var taiyang_geometry = new THREE.SphereGeometry(64, 100, 100);
         var taiyang_material = new THREE.MeshLambertMaterial({
             emissive: 0xe65f05,
-            map: THREE.ImageUtils.loadTexture("../img/taiyang.jpg"),
+            map: THREE.ImageUtils.loadTexture("/img/index/taiyang.jpg"),
             side: THREE.DoubleSide,
             color: 0xffffff
         });
@@ -41,7 +41,7 @@
     // 行星
     var xingxingOptions = [{
         name: "shuixing",
-        map: "../img/shuixing.jpg",
+        map: "/img/index/shuixing.jpg",
         r: 1,
         position: {
             x: 0,
@@ -50,7 +50,7 @@
         }
     }, {
         name: "jinxing",
-        map: "../img/jinxing.jpg",
+        map: "/img/index/jinxing.jpg",
         r: 2,
         position: {
             x: 0,
@@ -59,7 +59,7 @@
         }
     }, {
         name: "diqiu",
-        map: "../img/diqiu.jpg",
+        map: "/img/index/diqiu.jpg",
         r: 4,
         position: {
             x: 0,
@@ -68,7 +68,7 @@
         }
     }, {
         name: "huoxing",
-        map: "../img/huoxing.jpg",
+        map: "/img/index/huoxing.jpg",
         r: 5,
         position: {
             x: 0,
@@ -77,7 +77,7 @@
         }
     }, {
         name: "muxing",
-        map: "../img/muxing.jpg",
+        map: "/img/index/muxing.jpg",
         r: 17,
         position: {
             x: 0,
@@ -86,7 +86,7 @@
         }
     }, {
         name: "tuxing",
-        map: "../img/tuxing.jpg",
+        map: "/img/index/tuxing.jpg",
         r: 11,
         position: {
             x: 0,
@@ -95,7 +95,7 @@
         }
     }, {
         name: "tianwangxing",
-        map: "../img/tianwangxing.jpg",
+        map: "/img/index/tianwangxing.jpg",
         r: 9,
         position: {
             x: 0,
@@ -104,7 +104,7 @@
         }
     }, {
         name: "haiwangxing",
-        map: "../img/haiwangxing.jpg",
+        map: "/img/index/haiwangxing.jpg",
         r: 6,
         position: {
             x: 0,
@@ -128,7 +128,7 @@
     var huanOptions = [{
         name: "tuxing_huan",
         father: "tuxing",
-        map: "../img/tuxing_huan.jpg",
+        map: "/img/index/tuxing_huan.jpg",
         r: {
             min: 14,
             max: 22
@@ -141,7 +141,7 @@
     }, {
         name: "tianwangxing_huan",
         father: "tianwangxing",
-        map: "../img/tianwangxing_huan.jpg",
+        map: "/img/index/tianwangxing_huan.jpg",
         r: {
             min: 10,
             max: 12
