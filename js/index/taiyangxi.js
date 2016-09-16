@@ -173,10 +173,10 @@
         var r = 1920 / 2;
         var geometr = new THREE.PlaneGeometry(r * 2, r * 2, 1, 1);
         var material = [new THREE.MeshBasicMaterial({
-            map: THREE.ImageUtils.loadTexture("../img/bg0.jpg"),
+            map: THREE.ImageUtils.loadTexture("/img/index/bg0.jpg"),
             side: THREE.DoubleSide
         }), new THREE.MeshBasicMaterial({
-            map: THREE.ImageUtils.loadTexture("../img/bg1.jpg"),
+            map: THREE.ImageUtils.loadTexture("/img/index/bg1.jpg"),
             side: THREE.DoubleSide
         })];
         var yuzhou = [];
