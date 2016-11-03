@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/prism/1.5.1/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/prism/1.5.1/prism.min.js"></script>
+    <style>
+        .aria {padding: 10px;}
+        .aria-table .aria-pre {margin: 0;padding: 0;}
+        .aria-table td {vertical-align: middle !important;}
+        .aria-table td:nth-child(1) {width: 200px;}
+        .aria-table td:nth-child(2) {width: 600px;}
+        .aria-table td:nth-child(4) {width: 300px;}
+        .fast {position: fixed;top: 0;right: 0;}
+    </style>
+    <title>aria速查</title>
+</head>
+<body>
+<div class="aria">
+    <h2>aria速查</h2>
+    <div>
+        <small>参考来源：
+            w3cplus大漠前辈的教程<a href="http://www.w3cplus.com/wai-aria/wai-aria.html" target="_blank">http://www.w3cplus.com/wai-aria/wai-aria.html</a>，
+            张鑫旭大神的博客<a href="http://www.zhangxinxu.com/wordpress/2012/03/wai-aria-%E6%97%A0%E9%9A%9C%E7%A2%8D%E9%98%85%E8%AF%BB" target="_blank">http://www.zhangxinxu.com/wordpress/2012/03/wai-aria-无障碍阅读</a>
+        </small>
+    </div>
+    <!-- 角色 -->
+    <h4 id="role"><b>角色（role）</b></h4>
+    <table class="table table-bordered table-condensed table-striped aria-table">
+        <thead>
+            <tr class="info">
+                <th>属性值</th>
+                <th>含义</th>
+                <th>示意</th>
+                <th>相关属性</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="role-alert">
+                <td>alert</td>
+                <td>表示警告</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="alert" role="alert"&gt;警告&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-dialog">
+                <td>dialog</td>
+                <td>表示Modal弹出窗</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="modal" role="dialog" tabindex="-1"&gt;弹出窗&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-presentation">
+                <td>presentation</td>
+                <td>表示描述（删除语义化）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;h1 role="presentation"&gt;这是一段文本。&lt;/h1&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-application">
+                <td>application</td>
+                <td>表示应用</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="application" role="application"&gt;这是一个模拟控件。&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-button">
+                <td>button</td>
+                <td>表示按钮</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;span class="btn" role="button"&gt;模拟按钮&lt;/span&gt;
+                    </code></pre>
+                </td>
+                <td>
+                    <a href="#aria-activedescendant">aria-activedescendant</a>
+                </td>
+            </tr>
+            <tr id="role-checkbox">
+                <td>checkbox</td>
+                <td>表示复选框</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="checkbox" role="checkbox"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-radio">
+                <td>radio</td>
+                <td>表示单选按钮</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="radio" role="radio"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-combobox">
+                <td>combobox</td>
+                <td>表示表单控件</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;input type="text" role="combobox"&gt;
+                    </code></pre>
+                </td>
+                <td>
+                    <a href="#aria-autocomplete">aria-autocomplete</a>
+                </td>
+            </tr>
+            <tr id="role-grid">
+                <td>grid</td>
+                <td>表示网格</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="grid" aria-readonly="true"&gt;
+    &lt;table role="presentation"&gt;&lt;/table&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-row">
+                <td>row</td>
+                <td>表示横行（tr）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;tr role="row"&gt;
+    &lt;td role="gridcell"&gt;表格内容&lt;/td&gt;
+&lt;/tr&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-gridcell">
+                <td>gridcell</td>
+                <td>网格单元格（td）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;tr role="row"&gt;
+    &lt;td role="gridcell"&gt;表格内容&lt;/td&gt;
+&lt;/tr&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-group">
+                <td>group</td>
+                <td>表示组合并</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="btn-group" role="group" aria-label="First group"&gt;组内容&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-heading">
+                <td>heading</td>
+                <td>表示应用程序标题头</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="page-title" role="heading" aria-level="1"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td>
+                    <a href="#aria-atomic">aria-atomic</a>，
+                    <a href="#aria-live">aria-live</a>
+                    <a href="#aria-level">aria-level</a>
+                </td>
+            </tr>
+            <tr id="role-listbox">
+                <td>listbox</td>
+                <td>表示列表框<br>（模拟带有multiple属性并且size值大于1的select元素，或者datalist并且aria-multiselectable属性值设置为false。比如使用ul来模拟下拉选择框中的列表项。）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="listbox" aria-expanded="true"&gt;&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-option">
+                <td>option</td>
+                <td>表示选项</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="listbox" aria-expanded="true"&gt;
+    &lt;li role="option"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-menu">
+                <td>menu</td>
+                <td>表示菜单</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="menu" aria-hidden="true"&gt;&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-menubar">
+                <td>menubar</td>
+                <td>表示菜单栏</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="menubar"&gt;
+    &lt;li role="menuitem"&gt;
+        &lt;ul role="menu" aria-hidden="true"&gt;&lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-menuitem">
+                <td>menuitem</td>
+                <td>表示菜单项</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="menubar"&gt;
+    &lt;li role="menuitem"&gt;
+        &lt;ul role="menu" aria-hidden="true"&gt;&lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-menuitemcheckbox">
+                <td>menuitemcheckbox</td>
+                <td>可复选的菜单项</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="menu" aria-hidden="true"&gt;
+    &lt;li role="menuitemcheckbox"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-menuitemradio">
+                <td>menuitemradio</td>
+                <td>可复选的菜单项</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="menu" aria-hidden="true"&gt;
+    &lt;li role="menuitemradio"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-log">
+                <td>log</td>
+                <td>表示日志记录</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="log"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-progressbar">
+                <td>presentation</td>
+                <td>表示进度条</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="progress" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" tabindex="0"&gt;
+    &lt;div class="progressIndicator" style="width: 23%;"&gt;&lt;/div&gt;
+    &lt;div class="progressVal" aria-hidden="false"&gt;23%&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-region">
+                <td>region</td>
+                <td>表示区域</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="region" aria-expanded="false" tabindex="-1"&gt;这是个区域&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-spinbutton">
+                <td>spinbutton</td>
+                <td>表示微调</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="spinbutton" role="spinbutton" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"&gt;50&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-tab">
+                <td>tab</td>
+                <td>表示标签</td>
+                <td rowspan="3">
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="tabpanel"&gt;
+    &lt;ul class="tablist" role="tablist"&gt;
+        &lt;li role="tab" aria-selected="true"  tabindex="0">美女&lt;/li&gt;
+        &lt;li role="tab" aria-selected="false" tabindex="-1">淑女&lt;/li&gt;
+        &lt;li role="tab" aria-selected="false" tabindex="-1">熟女&lt;/li&gt;
+        &lt;li role="tab" aria-selected="false" tabindex="-1">腐女&lt;/li&gt;
+    &lt;/ul>
+&lt;/div>
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr id="role-tablist">
+                <td>tablist</td>
+                <td>表示标签列表</td>
+                <td></td>
+            </tr>
+            <tr id="role-tabpanel">
+                <td>tabpanel</td>
+                <td>表示标签面板</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="role-timer">role-timer</td>
+                <td>表示计数</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="timer" aria-atomic="true" aria-relevant="all"&gt;0&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="role-toolbar">role-toolbar</td>
+                <td>表示工具栏</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="toolbar" tabindex="0" aria-activedescendant="button1"&gt;
+    &lt;img id="button1" src="btncut.png" role="button" alt="cut"&gt;
+    &lt;img id="button2" src="btncopy.png" role="button" alt="copy"&gt;
+    &lt;img id="button3" src="btnpaste.png" role="button" alt="paste"&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td>
+                    <a href="#aria-activedescendant">aria-activedescendant</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="role-tooltip">role-tooltip</td>
+                <td>表示提示文本</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="text"&gt;
+    &lt;label id="name_label" for="name"&gt;姓名:&lt;/label&gt;
+    &lt;input id="name" type="text" name="name" aria-labelledby="name_label" aria-describedby="tip" aria-required="false"&gt;
+    &lt;div id="tip" role="tooltip" aria-hidden="true"&gt;工具提示&lt;/div&gt;
+&lt;/div>
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="role-tree">role-tree</td>
+                <td>表示树形</td>
+                <td rowspan="2">
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="tree"&gt;
+    &lt;li aria-expanded="true" tabindex="-1" role="treeitem"&gt;
+        &lt;img src="expanded.gif" alt="展开"&gt;美女
+        &lt;ul role="group"&gt;
+            &lt;li tabindex="-1" role="treeitem"&gt;晴川&lt;/li&gt;
+            &lt;li tabindex="-1" role="treeitem"&gt;静秋&lt;/li&gt;
+            &lt;li tabindex="-1" role="treeitem"&gt;黄小仙&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li aria-expanded="false" tabindex="0" role="treeitem"&gt;
+        &lt;img src="contracted.gif" alt="收起"&gt;淑女
+        &lt;ul role="group">&lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="role-treeitem">role-treeitem</td>
+                <td>表示树结构选项</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 属性 -->
+    <h4 id="aria1"><b>属性（aria）</b></h4>
+    <table class="table table-bordered table-condensed table-striped aria-table">
+        <thead>
+            <tr class="info">
+                <th>属性值</th>
+                <th>含义</th>
+                <th>示意</th>
+                <th>相关属性</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="aria-activedescendant">aria-activedescendant</td>
+                <td>字符串（后代元素的id值）<br>（定义了当工具栏获取焦点时，哪一个工具栏的子控件获取焦点）</td>
+                <td>
+                        <pre class="aria-pre"><code class="language-html">
+&lt;div class="toolbar" aira-activedscendant="button1"&gt;
+    &lt;img id="button1" role="button" src="btn.png"&gt;
+&lt;/div&gt;
+                        </code></pre>
+                </td>
+                <td>
+                    <a href="#role-toolbar">role-toolbar</a>，
+                    <a href="#role-button">role-button</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="aria-atomic">aria-atomic</td>
+                <td>字符串。表示区域内容是否完整播报。值为true和false。值为true时，读屏软件会把整个区域内容都播报出来，如果为false则表示只需要播报修改的部分。</td>
+                <td>
+                        <pre class="aria-pre"><code class="language-html">
+&lt;div role="heading" aria-live="assertive" aria-atomic="true"&gt;&lt;/div&gt;
+                        </code></pre>
+                </td>
+                <td>
+                    <a href="#role-heading">heading</a>，
+                    <a href="#aria-live">aria-live</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="aria-autocomplete">aria-autocomplete</td>
+                <td>字符串，表示用户的文本框的自动提示是否提供，可选值有inline、list、both和none。<br>aria-autocomplete对应HTML5中的autocomplete属性。如果aria-autocomplete取值为list、inline或both时，元素的autocomplete要设置为on,如果其值为none，则autocomplete取值为off。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;input type="text" role="combobox" aria-autocomplete="inline" aria-owns="list" tabindex="0"&gt;
+                    </code></pre>
+                </td>
+                <td>
+                    <a href="#role-combobox">role-combobox</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="aria-busy">aria-busy</td>
+                <td>字符串，表示当前区域的忙碌状态。默认为false，表示清除busy状态,取值为true时，表示该区域正在加载；取值为error时，表示该区域验证无效。<br>如果某个区域内(如这里ul)有多个地方需要修改，需要全部修改完毕再通知使用者的话，就可以先将aria-busy设为true, 等到全部内容更新完毕后再设成false。该属性可以避免辅助工具在区域内容更新完毕前不断即时提醒使用者。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul aria-busy="true" aria-atomic="true" aria-live="polite"&gt;&lt;/ul&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-controls">aria-controls</td>
+                <td>字符串，空格分隔的id属性值列表（定义了元素间不能通过文档结构决定的关联关系）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;h3 role="tab" aria-controls="panel1" tabindex="0"&gt;&lt;/h3&gt;
+&lt;div id="panel1" role="tabpanel"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-describedby">aria-describedby</td>
+                <td>字符串，空格分隔的id属性值列表（定义了元素间不能通过文档结构决定的关联关系，如果指定了不只一个id, 所有元素会合并在一起共同创建一条单独的描述。）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;ul role="group"&gt;
+    &lt;li role="checkbox" aria-checked="false" aria-describedby="desc1" tabindex="0"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="desc1"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-dropeffect">aria-dropeffect</td>
+                <td>字符串。表示拖拽效果。可选值有：copy, move, reference, execute, popup, none, 依次表示：复制，移动，参照，执行，弹出以及没有效果。</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-grabbed">aria-grabbed</td>
+                <td>字符串。拖拽中元素的捕获状态。可选值有:true, false, undefined。默认为undefined，表示元素捕获状态未知。true表示元素可以捕获；false表示不能被捕获。（该属性用在拖拽上。类似于HTML5中的draggable属性。）</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-flowto">aria-dropeffect</td>
+                <td>字符串，空格分隔的的id值列表（如果该属性值对应的是单独的id, 辅助技术会恢复目标元素的阅读；如果对应的是多个id, 则辅助技术会让用户去选择、导航到目标元素。）</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aira-haspopupo">aira-haspopup</td>
+                <td>字符串。true表示点击的时候会出现菜单或是浮动元素； false表示没有pop-up效果。</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-label">aria-label</td>
+                <td>定义一个字符串值标记当前元素。</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-labelledby">aria-labelledby</td>
+                <td>字符串，空格分隔的id列表值。（aria-labelledby一般用在区域元素上，对于的id一般为对应的标题或是标签元素的id关系型属性。）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="alertdialog" aria-labelledby="title"&gt;
+    &lt;h3 id="title"&gt;&lt;/h3&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-level">aria-level</td>
+                <td>数值，表示等级</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="heading" aria-level="2"&gt;标题&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td>
+                    <a href="#role-heading">role-heading</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="aria-live">aria-live</td>
+                <td>字符串。可选值有：off, polite, assertive,rude。默认为off, 表示不宣布更新；polite表示只有用户闲时宣布；assertive表示尽快对用户宣布；rude表示即时提醒用户，必要的时候甚至中断用户。（绝大多数的更新应该在用户闲暇的时候告知，即时提示对用户是一种干扰。如果希望内容完全更新后再提示，可以使用上面提到的aria-busy。左侧的HTML为时间选择控件的年月标题部分，aria-live="assertive"表示的是当用户选择了新的时间的时候，尽快通知用户时间发生了变更。）</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="heading" aria-live="assertive" aria-atomic="true"&gt;2012年 3月&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-multiselectable">aria-multiselectable</td>
+                <td>字符串。表示是否可多选。默认为false, 表示一次只能选择一个项。true表示一次可以选择多个项。</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-owns">aria-owns</td>
+                <td>字符串，值为目标元素id</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-posinset">aria-posinset</td>
+                <td>数值，表示当前位置</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-readonly">aria-posinset</td>
+                <td>字符串。表示是否只读。默认为false, 表示元素值可以被修改；true表示元素指不能被改变</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-relevant">aria-relevant</td>
+                <td>字符串。表示区域内哪些操作行为需要做出反应。可选值有：additions, removals, text, all，可以空格分隔多个一起显示。additions表示新增节点的时候做出反应；removals表示删除节点时重要操作；text表示文本改变是值得重视的；all等同于同时使用上面三个属性值</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="log" aria-atomic="false" aria-relevant="additions"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-required">aria-required</td>
+                <td>字符串。元素值是否必需。默认为false, 表示元素值可以为空；true表示元素值是必需的</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;input id="name" type="text" name="name" aria-labelledby="name_label" aria-describedby="tip" aria-required="true"&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-secret">aria-secret</td>
+                <td>字符串，表示机密状态</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-setsize">aria-setsize</td>
+                <td>数值，设置尺寸的大小值</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-sort">aria-sort</td>
+                <td>字符串。表示表格或格栅中的项是以升序排列还是降序排列。可选值：ascending(↑), descending(↓), none, other</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-valuemax">aria-valuemax</td>
+                <td>数值，允许的最大值。（用在progressbar组件上，对应HTML5中的max）</td>
+                <td rowspan="3">
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-valuemin">aria-valuemin</td>
+                <td>数值，允许的最小值。（用在progressbar组件上，对应HTML5中的min）</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-valuenow">aria-valuenow</td>
+                <td>数值，表示当前值。（用在progressbar组件上，对应HTML5中的value）</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-valuetext">aria-valuetext</td>
+                <td>字符串。定义等同于aria-valuenow人可读的文本</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 状态 -->
+    <h4 id="aria2"><b>状态（aria）</b></h4>
+    <table class="table table-bordered table-condensed table-striped aria-table">
+        <thead>
+        <tr class="info">
+            <th>属性值</th>
+            <th>含义</th>
+            <th>示意</th>
+            <th>相关属性</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="aria-checked">aria-checked</td>
+                <td>字符串。表示检查的状态。true表示元素被选择；false表示元素未被选择；mixed表示元素同时有选择和为选择状态。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;li role="checkbox" aria-checked="true" tabindex="0"&gt;&lt;/li&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-disabled">aria-disabled</td>
+                <td>字符串。表禁用状态，true表示当前是非激活状态；false表示清除非激活状态。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="button" aria-pressed="false" aria-disabled="false" tabindex="0"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-expanded">aria-expanded</td>
+                <td>字符串。表示展开状态。默认为undefined, 表示当前展开状态未知。其它可选值：true表示元素是展开的；false表示元素不是展开的。</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-hidden">aria-hidden</td>
+                <td>字符串。可选值为true和false, true表示元素隐藏(不可见)，false表示元素可见。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div aria-hidden="false"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-invalid">aria-invalid</td>
+                <td>字符串。表示元素值是否错误的。默认为false, 表示是OK的，如果为true, 则表示值验证不通过。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;input type="text" size="3" aria-labelledby="valid" aria-invalid="false"&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-pressed">aria-pressed</td>
+                <td>字符串。表示按下的状态，可选值有：true, false, mixed, undfined。默认为undfined, 表示按下状态未知；true表示元素往下（按钮按下）；false表示元素抬起；mixed表示元素同时有按下和没有按下的状态。</td>
+                <td>
+                    <pre class="aria-pre"><code class="language-html">
+&lt;div role="button" aria-pressed="false" aria-disabled="false" tabindex="0"&gt;&lt;/div&gt;
+                    </code></pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="aria-selected">aria-selected</td>
+                <td>字符串。表示选择状态。可选值有：true, false, undefined。 默认为undefined，表示元素选择状态未知。true表示元素已选择；false表示未被选中。</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="fast">
+    <ol class="breadcrumb">
+        <li><a href="#role">角色</a></li>
+        <li><a href="#aria1">属性</a></li>
+        <li><a href="#aria2">状态</a></li>
+        <li><a href="javascript: window.scroll(0, 0);">返回顶部</a></li>
+        <li><a href="/">返回首页</a></li>
+    </ol>
+</div>
+</body>
+</html>
