@@ -109,8 +109,8 @@
     }
     {
         // 月亮
-        var _geometry = new THREE.SphereGeometry(80, 200, 200); // /img/index/diqiu.jpg
-        var texture = THREE.ImageUtils.loadTexture("../img/diqiu.jpg", {}, function () {});
+        var _geometry = new THREE.SphereGeometry(80, 200, 200);
+        var texture = THREE.ImageUtils.loadTexture("/img/index/diqiu.jpg", {}, function () {});
         var _material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             side: THREE.DoubleSide,
