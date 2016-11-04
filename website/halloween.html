@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html, .body, .box { width: 100%; height: 100%; }
+        body { margin: 0; }
+        body, html { overflow: hidden; }
+        .body { position: relative; background-color: #ddd; }
+        .box { position: absolute; top: 0; left: 0; }
+        .canvas { display: none; width: 903px; height: 903px; }
+        .audio { display: none; }
+    </style>
+    <title>万圣节快乐！</title>
+</head>
+<body>
+<div class="body">
+  <div class="box" id="box"></div>
+</div>
+<canvas class="canvas" id="canvas1" width="903" height="903"></canvas>
+<canvas class="canvas" id="canvas2" width="903" height="903"></canvas>
+<audio class="audio" id="audio" src="/file/music/SHK - Halloween Party.mp3" preload="meta"></audio>
+<script src="https://cdn.bootcss.com/three.js/r76/three.min.js"></script>
+<script src="/common/js/three/OrbitControls.js"></script>
+<script src="/js/halloween/canvasDraw.js"></script>
+<script src="/js/halloween/halloween.js"></script>
+</body>
+</html>
