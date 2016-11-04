@@ -60,9 +60,7 @@
     /* 动画持续改变 */
     function Animate(time) {
         renderer.clear();
-        if (music === "play") {
-            rotation();
-        }
+        if (music === "play") rotation();
         renderer.render(scene, camera);
         AnimateFrame = requestAnimationFrame(Animate);
     }
