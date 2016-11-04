@@ -106,7 +106,7 @@
         scene.add(boxMesh);
     }
     {
-        // 月亮
+        // 地球
         var _geometry = new THREE.SphereGeometry(80, 200, 200);
         var texture = THREE.ImageUtils.loadTexture("/img/index/diqiu.jpg", {}, function () {});
         var _material = new THREE.MeshBasicMaterial({
