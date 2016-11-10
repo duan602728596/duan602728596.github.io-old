@@ -103,7 +103,7 @@
     }
     {   // 地球
         const geometry = new THREE.SphereGeometry(80, 200, 200);
-        const texture = THREE.ImageUtils.loadTexture('../img/diqiu.jpg', {}, ()=>{});
+        const texture = THREE.ImageUtils.loadTexture('/img/index/diqiu.jpg', {}, ()=>{});
         const material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             side: THREE.DoubleSide,
