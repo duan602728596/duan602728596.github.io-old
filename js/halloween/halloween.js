@@ -1,22 +1,22 @@
-"use strict";
+'use strict';
 
 (function (_window) {
-    alert("请用IE11、谷歌、火狐、Edge浏览器打开此页面。\n点击地球开始播放音乐，再次点击停止播放音乐。");
+    alert('请用IE11、谷歌、火狐、Edge浏览器打开此页面。\n点击地球开始播放音乐，再次点击停止播放音乐。');
 
-    var box = document.getElementById("box");
+    var box = document.getElementById('box');
     var scene = void 0,
         camera = void 0,
         renderer = void 0,
         obitControls = void 0; // 场景，照相机，渲染器，鼠标控制
     var AnimateFrame = null; // 持续渲染
-    var _ref = [document.getElementById("canvas1"), document.getElementById("canvas2")];
+    var _ref = [document.getElementById('canvas1'), document.getElementById('canvas2')];
     var cs1 = _ref[0];
     var cs2 = _ref[1];
 
     var boxMesh = null,
         moonMesh = null;
-    var music = "stop";
-    var audio = document.getElementById("audio");
+    var music = 'stop';
+    var audio = document.getElementById('audio');
 
     /* 初始化 */
     // 场景
@@ -60,7 +60,7 @@
     /* 动画持续改变 */
     function Animate(time) {
         renderer.clear();
-        if (music === "play") rotation();
+        if (music === 'play') rotation();
         renderer.render(scene, camera);
         AnimateFrame = requestAnimationFrame(Animate);
     }
@@ -71,9 +71,9 @@
         initCamera();
         initRenderer();
         initOrbitControls();
-        _window.addEventListener("resize", windowChange, false);
-        box.addEventListener("click", boxMeshCk, false);
-        audio.addEventListener("ended", audioEnd, false);
+        _window.addEventListener('resize', windowChange, false);
+        box.addEventListener('click', boxMeshCk, false);
+        audio.addEventListener('ended', audioEnd, false);
         AnimateFrame = requestAnimationFrame(Animate);
     };
     init();
@@ -102,13 +102,13 @@
         var material = new THREE.MeshFaceMaterial([map1, map1, map1, map1, map2, map2]);
         boxMesh = new THREE.Mesh(geometry, material);
         boxMesh.position.set(0, 0, 0);
-        boxMesh.name = "boxMesh";
+        boxMesh.name = 'boxMesh';
         scene.add(boxMesh);
     }
     {
         // 地球
         var _geometry = new THREE.SphereGeometry(80, 200, 200);
-        var texture = THREE.ImageUtils.loadTexture("/img/index/diqiu.jpg", {}, function () {});
+        var texture = THREE.ImageUtils.loadTexture('../img/diqiu.jpg', {}, function () {});
         var _material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             side: THREE.DoubleSide,
@@ -116,7 +116,7 @@
         });
         moonMesh = new THREE.Mesh(_geometry, _material);
         moonMesh.position.set(0, 0, 0);
-        moonMesh.name = "moonMesh";
+        moonMesh.name = 'moonMesh';
         scene.add(moonMesh);
     }
 
@@ -133,13 +133,13 @@
 
     /* children */
     var childrenFun = {
-        "moonMesh": function moonMesh() {
-            if (music === "stop") {
+        'moonMesh': function moonMesh() {
+            if (music === 'stop') {
                 audio.play();
-                music = "play";
-            } else if (music === "play") {
+                music = 'play';
+            } else if (music === 'play') {
                 audio.pause();
-                music = "stop";
+                music = 'stop';
             }
         }
     };
@@ -160,7 +160,7 @@
 
     /* 播放结束 */
     function audioEnd(event) {
-        alert("万圣节快乐！Happy halloween!");
-        music = "stop";
+        alert('万圣节快乐！Happy halloween!');
+        music = 'stop';
     }
 })(window);
