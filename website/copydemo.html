@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <title>Copy Demo</title>
 </head>
 <body>
@@ -11,8 +12,8 @@
     <time>2016.8.15 星期二</time>
     <p>今天风和日丽，我和小红去了人民公园，玩了滑梯、打雪仗、划船，真是愉快的一天啊。</p>
 </article>
-<button id="copy">复制文章</button>
-<textarea style="width: 500px;height: 100px;" placeholder="试一试ctrl + v"></textarea>
+<button class="btn btn-default" id="copy">复制文章</button>
+<textarea class="form-control" style="width: 500px;height: 100px;" placeholder="试一试ctrl + v"></textarea>
 <script>
     function copyArticle(event){
         const range = document.createRange();
